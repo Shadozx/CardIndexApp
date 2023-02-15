@@ -1,0 +1,37 @@
+.card-element {
+    margin-top: 10px;
+}
+
+textarea {
+    background-color: rgb(42 42 42);
+    color: #666666;
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 100%;
+
+    /* min-height: 100px; */
+    /* transition: all 0.2s; */
+}
+.addition {
+    min-height: 250px;
+}
+
+input[type='text'],
+.textarea:hover {
+    cursor: pointer;
+    background-color: rgb(58, 58, 58);
+}
+
+input[type='text'],
+.textarea:focus {
+    cursor: text;
+    color: #666666;
+    background-color: rgb(58, 58, 58);
+    border-color: #333333;
+}

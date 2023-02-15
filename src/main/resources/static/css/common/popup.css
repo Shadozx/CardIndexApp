@@ -1,0 +1,123 @@
+@import url(form.css);
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: rgb(26, 26, 26);
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup h2 {
+  margin-top: 0;
+  /*color: #333;*/
+  color: var(--color-text);
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06d85f;
+}
+.popup .popup-body {
+  max-height: 30%;
+  overflow: auto;
+}
+/*form*/
+
+.entity-info {
+  border-radius: 5px;
+  background-color: rgb(26, 26, 26);
+  padding: 20px 0;
+}
+
+/*input[type='text'] {*/
+/*  background-color: rgb(42 42 42);*/
+/*  width: 100%;*/
+/*  padding: 12px;*/
+/*  border: 2px solid transparent;*/
+/*  border-radius: 4px;*/
+/*  box-sizing: border-box;*/
+/*  margin-top: 6px;*/
+/*  margin-bottom: 16px;*/
+/*  resize: vertical;*/
+
+/*  outline: none;*/
+/*  font-family: 'Heebo', sans-serif;*/
+/*  font-weight: 500;*/
+/*  font-size: 16px;*/
+/*  line-height: 1.4;*/
+/*}*/
+
+/*select,*/
+/*textarea {*/
+/*  background-color: rgb(42 42 42);*/
+/*  color: #666666;*/
+/*  padding: 1em;*/
+/*  border-radius: 10px;*/
+/*  border: 2px solid transparent;*/
+/*  outline: none;*/
+/*  font-family: 'Heebo', sans-serif;*/
+/*  font-weight: 500;*/
+/*  font-size: 16px;*/
+/*  line-height: 1.4;*/
+/*  width: 100%;*/
+/*  max-width: 100%;*/
+/*  !* min-height: 100px; *!*/
+/*  transition: all 0.2s;*/
+/*}*/
+
+/* input[type='text'],
+  select, */
+
+/*input[type='text'],*/
+/*select {*/
+/*  background-color: rgb(42 42 42);*/
+/*}*/
+/*textarea:hover {*/
+/*  cursor: pointer;*/
+/*  background-color: rgb(58, 58, 58);*/
+/*}*/
+
+/*input[type='text'],*/
+/*select,*/
+/*textarea:focus {*/
+/*  cursor: text;*/
+/*  color: #666666;*/
+/*  background-color: rgb(58, 58, 58);*/
+/*  border-color: #333333;*/
+/*}*/
+
+/*input[type='submit'] {*/
+/*  background-color: #413b3b;*/
+/*  color: #fff;*/
+/*  padding: 15px 50px;*/
+/*  border: none;*/
+/*  border-radius: 50px;*/
+/*  cursor: pointer;*/
+/*  font-size: 15px;*/
+/*  text-transform: uppercase;*/
+/*  letter-spacing: 3px;*/
+/*}*/

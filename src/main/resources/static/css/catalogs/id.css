@@ -1,0 +1,36 @@
+@import url(catalogs.css);
+
+/* .first-box,
+  .last-box,
+  .catalog {
+    height: 70px;
+  } */
+
+.buttons {
+  display: none;
+}
+
+.card {
+  margin: 50px 0;
+  padding: 20px;
+  border-width: 2px 0;
+  border: solid var(--border-color);
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.catalog-descr {
+  font-size: 14px;
+}
+
+@media (max-width: 460px) {
+  .details .details-table {
+    display: none;
+  }
+  .buttons {
+    display: block;
+  }
+}

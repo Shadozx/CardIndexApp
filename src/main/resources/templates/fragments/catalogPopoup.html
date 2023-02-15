@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="overlay" id="newCatalog" th:fragment="catalogPopoup">
+  <div class="popup">
+    <h2>Заповніть форму для каталогу</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="popup-body">
+      <div class="entity-info">
+        <form
+                id="catalogId"
+                name="catalogForm"
+
+                th:action="@{${link}}"
+                th:method="post"
+                th:object="${catalogDto}"
+        >
+          <div class="card-name">
+
+            <textarea
+                    placeholder="Імя каталогу.."
+                    type="text"
+                    name="card-name"
+                    th:field="*{title}"
+            ></textarea>
+            <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title error</div>
+
+          </div>
+          <div class="description">
+            <div class="card-element">Опис</div>
+            <textarea
+                    placeholder="Опис каталогу.."
+                    type="text"
+                    name="description"
+                    th:field="*{description}"
+            ></textarea>
+          </div>
+
+          <input class="button" type="submit" value="Підтвердити" id="submCatalog" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

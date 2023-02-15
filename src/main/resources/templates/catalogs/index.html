@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Картотеки</title>
+
+    <link rel="stylesheet" href="/css/catalogs/catalogs.css" />
+
+    <link
+      rel="stylesheet"
+      href="/css/common/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <header></header>
+
+      <div class="container">
+        <main class="container_body">
+          <div class="first-box">
+            <div class="box-body">
+              <div class="box-header">Картотеки</div>
+
+              <div class="details-table">
+                <a class="button" href="#newCatalog"
+                  ><i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog" th:each="catalog : ${catalogs}">
+            <div class="catalog-body">
+              <div class="empty item"></div>
+              <div class="item">
+                <div class="catalog-name">
+                  <a th:href="@{/{catalogId}(catalogId=${catalog.id})}" th:text="${catalog.title}">
+                    Main catalog
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="details-table">
+                  <a th:href="@{/{catalogId}edit(catalogId=${catalog.id})}" class="button update">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                  </a>
+                  <a th:href="@{/catalogs/{catalogId}(catalogId=${catalog.id})}" class="button delete">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="links box" aria-haspopup="false">
+                  <button class="btn-dropdown">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                  </button>
+                  <nav class="nav-dropdown">
+                    <ul>
+                      <li>
+                        <a th:href="@{/{catalogId}/edit(catalogId=${catalog.id})}">Змінити каталог</a>
+                      </li>
+                      <li>
+                        <a class="delete" th:href="@{/catalogs/{catalogId}(catalogId=${catalog.id})}">
+                          Видалити каталог
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="last-box"></div>
+
+          <div th:replace="~{fragments/catalogPopoup :: catalogPopoup}"></div>
+        </main>
+      </div>
+
+      <footer></footer>
+    </div>
+
+    <script src="/js/common/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </body>
+</html>

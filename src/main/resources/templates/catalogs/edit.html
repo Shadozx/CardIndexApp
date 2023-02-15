@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${catalog.title}"></title>
+
+    <link rel="stylesheet" href="/css/common/edit.css" />
+
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <header></header>
+
+      <div class="container">
+        <main class="container_body">
+          <div class="card">
+            <form  th:action="@{/catalogs/{catalogId}(catalogId=${catalog.id})}" th:method="PUT" th:object="${catalog}">
+              <div class="card-name">
+                <textarea class="textarea" name="catalog-name" th:text="${title}" th:field="*{title}" id="title">
+                  Імя каталогу
+                </textarea>
+                <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Name Error</div>
+              </div>
+              <div class="content">
+                <div class="description">
+                  <div class="card-element">Опис</div>
+                  <textarea
+                    name="description"
+                    class="textarea"
+                    placeholder="Введіть текст..."
+                    th:text="${description}"
+                    th:field="*{description}"
+                    id="description"
+                  ></textarea>
+                </div>
+
+
+              </div>
+
+              <input
+                class="button"
+                type="submit"
+                value="Оновити"
+                id="submCard"
+              />
+
+              <a class="button delete" th:href="@{/catalogs/{catalogId}(catalogId=${catalog.id})}">Видалити</a>
+            </form>
+          </div>
+        </main>
+      </div>
+
+      <footer></footer>
+    </div>
+
+    <script src="/js/common/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  </body>
+</html>
