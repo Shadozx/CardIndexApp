@@ -136,35 +136,35 @@ public class MainController {
         }
     }
 
-    @GetMapping("/tojson")
-    public String toJson()  {
-
+//    @GetMapping("/tojson")
+//    public String toJson()  {
+//
+////        List<Catalog> catalogs = catalogsService.findMainCatalogs();
+////
+////        if(!catalogs.isEmpty()) {
+////            try(FileWriter writer = new FileWriter("list_catalogs.json")){
+////                String str = new GsonBuilder().registerTypeAdapter(Catalog.class, new MyTypeAdapter<Catalog>()).create().toJson(catalogs);
+////
+////                writer.write(str);
+////                System.out.println("List: " + str);
+////            }catch (IOException e) {
+////
+////            }
+////        }
+//
 //        List<Catalog> catalogs = catalogsService.findMainCatalogs();
 //
-//        if(!catalogs.isEmpty()) {
-//            try(FileWriter writer = new FileWriter("list_catalogs.json")){
-//                String str = new GsonBuilder().registerTypeAdapter(Catalog.class, new MyTypeAdapter<Catalog>()).create().toJson(catalogs);
+//        try (FileWriter writer = new FileWriter("list_pub_catalogs.json")) {
 //
-//                writer.write(str);
-//                System.out.println("List: " + str);
-//            }catch (IOException e) {
 //
-//            }
+//            JsonMapper mapper = createMapper();
+//
+//            writer.write(mapper.writeValueAsString(catalogs));
+//        }catch (IOException e) {
+//
 //        }
-
-        List<Catalog> catalogs = catalogsService.findMainCatalogs();
-
-        try (FileWriter writer = new FileWriter("list_pub_catalogs.json")) {
-
-
-            JsonMapper mapper = createMapper();
-
-            writer.write(mapper.writeValueAsString(catalogs));
-        }catch (IOException e) {
-
-        }
-        return "redirect:/";
-    }
+//        return "redirect:/";
+//    }
 
 
     public static JsonMapper createMapper() {
