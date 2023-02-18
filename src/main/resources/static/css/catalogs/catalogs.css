@@ -1,6 +1,6 @@
 @import url(../common/index.css);
 @import url(../common/popup.css);
-
+@import url(../common/dropmenu.css);
 .item {
   width: calc(100% / 3);
   /* max-height: 56px; */
@@ -47,7 +47,6 @@
 .catalog-name,
 .card-name {
   font-size: 20px;
-  text-align: center;
   align-self: center;
   word-wrap: break-word;
   word-break: break-word;
@@ -72,13 +71,13 @@
 
   .links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 }
 
 @media (max-width: 700px) {
   .catalog {
-    padding: 20px 12px;
+    padding: 20px;
   }
 }
 
